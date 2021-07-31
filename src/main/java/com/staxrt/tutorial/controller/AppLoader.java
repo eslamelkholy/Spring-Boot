@@ -56,6 +56,6 @@ public class AppLoader
         JobsDAO jobs = new JobsDAO();
         String jobsDs = jobs.readCsv();
         
-        return jobsDs;
+        return "<pre>" + jobsDs + "</pre>";
     }
 }
