@@ -13,10 +13,10 @@ public class JobsDAO {
 
   }
 
-  public String readCsv() {
+  public Dataset<Row> readCsv() {
     DataFrameReader dataFrameReader = sparkSession.read();
     dataFrameReader.option("header", true);
     Dataset<Row> jobs = dataFrameReader.csv("src/main/java/com/staxrt/tutorial/controller/Wuzzuf_Jobs.csv");
-    return jobs.showString(10 ,25, false);
+    return jobs;
   }
 }
